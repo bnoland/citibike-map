@@ -60,10 +60,8 @@ function initMap() {
     var infoWindow = null;
     
     layer.addListener("click", function(event) {
-        if (infoWindow != null) {
-            console.log("Closing...");
+        if (infoWindow != null)
             infoWindow.close();
-        }
         
         var request = {
             location: event.latLng,
