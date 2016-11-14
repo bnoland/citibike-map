@@ -2,7 +2,16 @@
 function makeInfoWindow(event, svData) {
     var infoWindowDiv = document.createElement("div");
     
+    // Set up an element to hold the station name.
+    // TODO: The exact field name will probably be different when using the final data.
+    var stationName = event.row["station_name"].value;
+    var stationNameH1 = document.createElement("h1");
+    var text = document.createTextNode(stationName);
+    stationNameH1.appendChild(text);
+    infoWindowDiv.appendChild(stationNameH1);
+    
     if (svData != null) {
+        // If Street View data is available, set up an element to hold it.
         var panoramaDiv = document.createElement("div");
         panoramaDiv.style.width = "350px";
         panoramaDiv.style.height = "200px";
@@ -68,6 +77,8 @@ function initMap() {
             preference: "nearest"
         };
         
+        // Get the Street View data associated with the selected point and use it to generate an
+        // info window.
         sv.getPanorama(request, function(data, status) {
             if (status == "OK")
                 infoWindow = makeInfoWindow(event, data);
