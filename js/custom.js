@@ -3,7 +3,13 @@ function initMap() {
     var nyc = new google.maps.LatLng(40.73, -73.99);
     var map = new google.maps.Map(document.getElementById("map"), {
         center: nyc,
-        zoom: 12
+        zoom: 12,
+        
+        // Ensure that the map controls are all at the bottom of the screen.
+        mapTypeControl: true,
+        mapTypeControlOptions: {
+            position: google.maps.ControlPosition.RIGHT_BOTTOM
+        }
     });
     
     

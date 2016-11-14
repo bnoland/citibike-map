@@ -16,10 +16,25 @@ html, body {
     top: 0;
     left: 0;
     z-index: 1;
+    text-align: center;
+    color: #444;
 }
 
-#instructions {
+#top-bar h1 {
+    color: black;
+}
+
+#top-bar > div {
+    text-align: initial;
+    padding: 0.5em;
+}
+
+#welcome {
     display: inline-block;
+}
+
+#welcome h1 {
+    font-size: 2.5em;
 }
 
 #search-tools {
@@ -39,6 +54,18 @@ html, body {
 
 #search-tools #submit {
     margin-left: 90px
+}
+
+#intro {
+    max-width: 40%;
+    display: inline-block;
+}
+
+/* Hide the introduction if the screen is too small. */
+@media (max-width: 940px) {
+    #intro {
+        display: none;
+    }
 }
 
 #map {
