@@ -61,7 +61,8 @@ function setLayerData(layer, map, method, month, groupSize) {
     layer.setOptions({
         query: {
             select: "location",
-            from: tableIds[method][month]
+            from: tableIds[method][month],
+            where: groupSize + " > 0"
         },
         
         // The marker colors indicate the level of outgoing traffic at each station.
