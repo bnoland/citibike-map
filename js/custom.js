@@ -45,16 +45,16 @@ function setLayerData(layer, map, method, month, groupSize) {
     // Associates Fusion Table IDs with methods and months.
     var tableIds = {
         "method1": {
-            "january":  "1uAoDFezl7Q-50FmmYyxHWmB7H61Rx7K_7dSEg58H",
-            "april":    "1sQQsOEOlG6by0WTN00HAX5fFCzJqsoE6tG69iPoc",
-            "july":     "11Ym1s6HmFhQ38r1LZCkLTWDT35Dvo2zAI-uXZfOd",
-            "october":  "1KAUmSmkJVacPuztV7pVkVNnMC2vvrUduDGhrAG44"
+            "january":  "1mMVrepaGGNzk0kaI--3uvK915Xg2e-2e1iQVRmtA",
+            "april":    "1_F1DaWP4sdgX3zLhEYF3uIXw33jYZ3NGLTFDVzoS",
+            "july":     "1Td2BoiuAbM2zybxZGySDRboNTWsYHSUupfNR_hh3",
+            "october":  "1Z818EwvQfmGwuGj2uIA9f0esUlz78Gga2Dzv7ScH"
         },
         "method2": {
-            "january":  "1Rs3HCeEVm1De0RfzG3PQxJlsqIrUz753TzuP668O",
-            "april":    "15_7id9ILDLx0pPw_624rR3Qg7eTi4y0gf2dh9ttV",
-            "july":     "1mCmA5ju-JYh8yzSSdc0cQRIuRC4HBP5DbyBGIJJt",
-            "october":  "16-IG-LZwroi-ewVhAnV3UAQfHdavMzTp-6ppJkUw"
+            "january":  "1ow8C60LJaiZhKyO0lAo3N_3uMtA1B2MFMMdfNlzY",
+            "april":    "19jmI8MyXvrBu70Ls2W2FRabYC6D58vH51knu-BCB",
+            "july":     "1Is4fFH6u9PpCYimK037y04vFtKfE4w6_ayrxHzOm",
+            "october":  "1tzSjKhwtR68c58fu1jx_LVQN0jL4QKSEu0pS8xM6"
         }
     };
     
