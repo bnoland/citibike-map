@@ -38,16 +38,11 @@ html, body {
     font-size: 2.5em;
 }
 
-/* Make the welcome title smaller to save space if the screen is small. */
-/* TODO: Screen size would ideally not be hard-coded. */
-@media (max-width: 535px) {
-    #welcome h1 {
-        font-size: 1.2em;
-    }
+#welcome p {
+    width: 560px;
 }
 
 #search-tools {
-    padding: 1em;
     display: inline-block;
 }
 
@@ -65,23 +60,47 @@ html, body {
     margin-left: 90px
 }
 
-#intro {
-    max-width: 40%;
+#legend {
     display: inline-block;
 }
 
-/* Hide the introduction if the screen is too small. */
-/* TODO: Screen size would ideally not be hard-coded. */
-@media (max-width: 940px) {
-    #intro {
-        display: none;
+#legend h1 {
+    font-size: 1em;
+}
+
+.color-box {
+    width: 10px;
+    height: 10px;
+    border: 1px solid black;
+    display: inline-block;
+}
+
+#high {
+    background-color: red;
+}
+
+#medium {
+    background-color: yellow;
+}
+
+#low {
+    background-color: lightgreen;
+}
+
+/* TODO: Keep?? */
+/*
+@media (max-width: 1050px) {
+    #top-bar {
+        font-size: 0.7em;
     }
 }
+*/
 
 #map {
     width: 100%;
     position: absolute;
-    top: 10em;
+    /*top: 10em;*/
+    top: 0;
     bottom: 0;
     z-index: 0;
 }

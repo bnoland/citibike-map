@@ -69,12 +69,12 @@ function setLayerData(layer, map, method, month, groupSize) {
         styles : [{
             where: groupSize + " < 50",
             markerOptions: {
-                iconName: "small_blue"
+                iconName: "small_green"
             }
         }, {
             where: groupSize + " >= 50 AND " + groupSize + " < 500",
             markerOptions: {
-                iconName: "small_green"
+                iconName: "small_yellow"
             }
         }, {
             where: groupSize + " >= 500",
