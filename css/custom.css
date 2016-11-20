@@ -109,8 +109,11 @@ html, body {
 #map {
     width: 100%;
     position: absolute;
-    /*top: 10em;*/
-    top: 0;
+    
+    /* TODO: This should be set dynamically to the bottom of the top bar. */
+    top: 10em;
+    /*top: 0;*/
+    
     bottom: 0;
     z-index: 0;
 }
