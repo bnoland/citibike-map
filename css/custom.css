@@ -39,6 +39,7 @@ html, body {
 }
 
 /* Make the welcome title smaller to save space if the screen is small. */
+/* TODO: Screen size would ideally not be hard-coded. */
 @media (max-width: 535px) {
     #welcome h1 {
         font-size: 1.2em;
@@ -70,6 +71,7 @@ html, body {
 }
 
 /* Hide the introduction if the screen is too small. */
+/* TODO: Screen size would ideally not be hard-coded. */
 @media (max-width: 940px) {
     #intro {
         display: none;
