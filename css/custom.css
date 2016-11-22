@@ -125,10 +125,18 @@ html, body {
     
     /*bottom: 0;*/
     z-index: 0;
+    
+    /* TODO: Set this accordingly. */
+    min-height: 400px;
 }
 
 @media (max-width: 946px) {
     #map {
+        /*top: 135px;*/
+        /* TODO: Support for calc()? */
+        /*height: calc(100%-135px);*/
+
+        bottom: 0;
         left: 0;
         right: 0;
     }
