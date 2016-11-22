@@ -37,6 +37,8 @@ html, body {
     vertical-align: top;
     text-align: initial;
     padding: 0.5em;
+    
+    display: inline-block;
 }
 
 #info {
@@ -123,4 +125,19 @@ html, body {
     
     /*bottom: 0;*/
     z-index: 0;
+}
+
+@media (max-width: 946px) {
+    #map {
+        left: 0;
+        right: 0;
+    }
+    #side-bar {
+        height: initial;
+        width: 100%;
+        font-size: 0.7em;
+    }
+    #info > p {
+        display: none;
+    }
 }
