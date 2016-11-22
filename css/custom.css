@@ -7,7 +7,7 @@ html, body {
     font-family: "Roboto Condensed", sans-serif;
 }
 
-#top-bar {
+#side-bar {
     /*min-height: 10em;*/
     /*width: 100%;*/
 
@@ -24,15 +24,15 @@ html, body {
     color: #444;
 }
 
-#top-bar a {
+#side-bar a {
     color: #5c99ff;
 }
 
-#top-bar h1 {
+#side-bar h1 {
     color: black;
 }
 
-#top-bar > div {
+#side-bar > div {
     /*vertical-align: middle;*/
     vertical-align: top;
     text-align: initial;
@@ -104,7 +104,7 @@ html, body {
 /* TODO: Keep?? */
 /*
 @media (max-width: 1050px) {
-    #top-bar {
+    #side-bar {
         font-size: 0.7em;
     }
 }
