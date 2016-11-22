@@ -8,13 +8,16 @@
         
         <link rel="stylesheet" href="css/custom.css">
         
-        <title>Where are groups riding from?</title>
+        <title>Group trips within the Citi Bike system</title>
     </head>
     <body>
         <div id="top-bar">
-            <div id="welcome">
-                <h1>Where are groups riding from?</h1>
-                <p>Select some search criteria to filter the results. Go <a href="#">here</a> to find out more about this site. <b>Note: This site is still somewhat under construction.</b></p>
+            <div id="info">
+                <h1>Group trips within the Citi Bike system</h1>
+                <!--<p>Select some search criteria to filter the results. Go <a href="#">here</a> to find out more about this site. <b>Note: This site is still somewhat under construction.</b></p>-->
+                <p>Select the group calculation method, the month during which the trips were taken, and the group size.</p>
+                <p>Each dot represents a Citi Bike station. Clicking on one will show the station name, the number of groups of the selected size leaving this station during the specified month, and the location on Google Street View (if Street View data is available).</p>
+                <p>Click <a href="#">here</a> to find out more about this site. <b>Note: This site is still under construction.</b></p>
             </div>
             
             <div id="search-tools">
@@ -29,7 +32,6 @@
                 <div>
                     <label for="month">Month:</label>
                     <select id="month">
-                        <!-- TODO: Fill in month options. -->
                         <option value="january">January</option>
                         <option value="april">April</option>
                         <option value="july">July</option>
@@ -39,7 +41,6 @@
                 <div>
                     <label for="group-size">Group size:</label>
                     
-                    <!-- TODO: Maybe provide ability to select ranges of group sizes instead? -->
                     <select id="group-size">
                         <option value="total">All</option>
                         <option value="size1">1</option>
