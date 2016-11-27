@@ -1,4 +1,6 @@
 
+/* TODO: Replace all the native DOM stuff with JQuery stuff? */
+
 function makeInfoWindow(event, svData, groupSize) {
     var infoWindowDiv = document.createElement("div");
     
