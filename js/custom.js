@@ -2,7 +2,7 @@
 /* TODO: Replace all the native DOM stuff with JQuery stuff. */
 
 function setMapHeight() {
-    // Make the map fill the height of the viewport.
+    // Make the map fill the height of the document.
     // TODO: This is ugly...
     $("#map").height($(document).height() - $(".navbar").outerHeight(true) - 15);
 }
