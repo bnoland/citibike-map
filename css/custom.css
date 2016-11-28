@@ -3,9 +3,8 @@ body {
     font-size: 12pt;
 }
 
-/* TODO: Height should change dynamically. */
 #map {
-    height: 650px;
+    margin-bottom: 15px;
 }
 
 .color-box {

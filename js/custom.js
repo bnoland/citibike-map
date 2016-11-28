@@ -1,5 +1,11 @@
 
-/* TODO: Replace all the native DOM stuff with JQuery stuff? */
+/* TODO: Replace all the native DOM stuff with JQuery stuff. */
+
+function setMapHeight() {
+    // Make the map fill the height of the viewport.
+    // TODO: This is ugly...
+    $("#map").height($(document).height() - $(".navbar").outerHeight(true) - 15);
+}
 
 function makeInfoWindow(event, svData, groupSize) {
     var infoWindowDiv = document.createElement("div");
@@ -149,5 +155,16 @@ function initMap() {
         groupSize = document.getElementById("group-size").value;
         
         setLayerData(layer, map, method, month, groupSize);
+    });
+    
+    // Set the initial map height.
+    setMapHeight();
+    
+    google.maps.event.addDomListener(document, "resize", function() {
+        setMapHeight();
+    });
+    
+    google.maps.event.addDomListener(document.getElementById("center-map"), "click", function() {
+        map.panTo(nyc);
     });
 }
