@@ -1,10 +1,14 @@
 
 /* TODO: Replace all the native DOM stuff with JQuery stuff. */
 
-function setMapHeight() {
-    // Make the map fill the height of the document.
-    // TODO: This is ugly...
-    $("#map").height($(document).height() - $(".navbar").outerHeight(true) - 15);
+function updateMapHeight() {
+    // Make the map fill the height of the viewport.
+    
+    var marginBottom = parseInt($("#map").css("margin-bottom"), 10);
+    var navBarHeight = $(".navbar").outerHeight(true);
+    var newHeight = $(window).height() - navBarHeight - marginBottom;
+    
+    $("#map").height(newHeight);
 }
 
 function makeInfoWindow(event, svData, groupSize) {
@@ -20,6 +24,8 @@ function makeInfoWindow(event, svData, groupSize) {
     if (svData != null) {
         // If Street View data is available, set up an element to hold it.
         var panoramaDiv = document.createElement("div");
+        
+        // TODO: Give the panorama div a class and set these properties in custom.css.
         panoramaDiv.style.width = "350px";
         panoramaDiv.style.height = "200px";
         infoWindowDiv.appendChild(panoramaDiv);
@@ -158,10 +164,10 @@ function initMap() {
     });
     
     // Set the initial map height.
-    setMapHeight();
+    updateMapHeight();
     
-    google.maps.event.addDomListener(document, "resize", function() {
-        setMapHeight();
+    google.maps.event.addDomListener(window, "resize", function() {
+        updateMapHeight();
     });
     
     google.maps.event.addDomListener(document.getElementById("center-map"), "click", function() {
