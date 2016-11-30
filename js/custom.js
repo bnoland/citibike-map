@@ -1,6 +1,4 @@
 
-/* TODO: Replace all the native DOM stuff with JQuery stuff. */
-
 function updateMapHeight() {
     // Make the map fill the height of the viewport.
     
@@ -12,25 +10,20 @@ function updateMapHeight() {
 }
 
 function makeInfoWindow(event, svData, groupSize) {
-    var infoWindowDiv = document.createElement("div");
-    
-    // Set up an element to hold the station name.
     var stationName = event.row["station.name"].value;
-    var stationNameH1 = document.createElement("h1");
-    var text = document.createTextNode(stationName);
-    stationNameH1.appendChild(text);
-    infoWindowDiv.appendChild(stationNameH1);
+    var number = event.row[groupSize].value;
+    var infoWindowDiv =
+        $("<div> \
+              <h1>" + stationName + "</h1> \
+              <p>Number of outgoing groups of specified size(s): " + number + "</p> \
+           </div>");
     
     if (svData != null) {
         // If Street View data is available, set up an element to hold it.
-        var panoramaDiv = document.createElement("div");
+        var panoramaDiv = $("<div class='panorama'></div>");
+        infoWindowDiv.children("h1").append(panoramaDiv);
         
-        // TODO: Give the panorama div a class and set these properties in custom.css.
-        panoramaDiv.style.width = "350px";
-        panoramaDiv.style.height = "200px";
-        infoWindowDiv.appendChild(panoramaDiv);
-        
-        var panorama = new google.maps.StreetViewPanorama(panoramaDiv, {
+        var panorama = new google.maps.StreetViewPanorama(panoramaDiv[0], {
             pano: svData.location.pano,
             pov: {
                 heading: 270,
@@ -40,15 +33,8 @@ function makeInfoWindow(event, svData, groupSize) {
         });
     }
     
-    // Set up an element to hold the number of outgoing groups for this station.
-    var number = event.row[groupSize].value;
-    var numberP = document.createElement("p");
-    var text = document.createTextNode("Number of outgoing groups of specified size(s): " + number);
-    numberP.appendChild(text);
-    infoWindowDiv.appendChild(numberP);
-    
     var infoWindow = new google.maps.InfoWindow({
-        content: infoWindowDiv,
+        content: infoWindowDiv[0],
         position: event.latLng
     });
     
@@ -103,7 +89,7 @@ function setLayerData(layer, map, method, month, groupSize) {
 
 function initMap() {
     var nyc = new google.maps.LatLng(40.73, -73.99);
-    var map = new google.maps.Map(document.getElementById("map"), {
+    var map = new google.maps.Map($("#map")[0], {
         center: nyc,
         zoom: 12,
         
@@ -116,9 +102,9 @@ function initMap() {
     });
     
     // The data that defines the current layer.
-    var method = document.getElementById("method").value;
-    var month = document.getElementById("month").value;
-    var groupSize = document.getElementById("group-size").value;
+    var method = $("#method").val();
+    var month = $("#month").val();
+    var groupSize = $("#group-size").val();
     
     var layer = new google.maps.FusionTablesLayer();
     var sv = new google.maps.StreetViewService();
@@ -152,13 +138,13 @@ function initMap() {
     // Set the initial layer options.
     setLayerData(layer, map, method, month, groupSize);
     
-    google.maps.event.addDomListener(document.getElementById("submit"), "click", function() {
+    google.maps.event.addDomListener($("#submit")[0], "click", function() {
         if (infoWindow != null)
             infoWindow.close();
         
-        method = document.getElementById("method").value;
-        month = document.getElementById("month").value;
-        groupSize = document.getElementById("group-size").value;
+        method = $("#method").val();
+        month = $("#month").val();
+        groupSize = $("#group-size").val();
         
         setLayerData(layer, map, method, month, groupSize);
     });
@@ -170,7 +156,7 @@ function initMap() {
         updateMapHeight();
     });
     
-    google.maps.event.addDomListener(document.getElementById("center-map"), "click", function() {
+    google.maps.event.addDomListener($("#center-map")[0], "click", function() {
         map.panTo(nyc);
     });
 }
