@@ -14,8 +14,8 @@ function makeInfoWindow(event, svData, groupSize) {
     var number = event.row[groupSize].value;
     var infoWindowDiv =
         $("<div> \
-              <h1>" + stationName + "</h1> \
-              <p>Number of outgoing groups of specified size(s): " + number + "</p> \
+               <h1>" + stationName + "</h1> \
+               <p>Number of outgoing groups of specified size(s): " + number + "</p> \
            </div>");
     
     if (svData != null) {
