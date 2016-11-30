@@ -26,6 +26,19 @@ body {
     background-color: lightgreen;
 }
 
+.info-window-content {
+    font-size: 12pt;
+}
+
+.info-window-content h1 {
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+.info-window-content p {
+    padding-top: 8px;
+}
+
 .panorama {
     width: 350px;
     height: 200px;

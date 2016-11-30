@@ -13,15 +13,19 @@ function makeInfoWindow(event, svData, groupSize) {
     var stationName = event.row["station.name"].value;
     var number = event.row[groupSize].value;
     var infoWindowDiv =
-        $("<div> \
+        $("<div class='info-window-content'> \
                <h1>" + stationName + "</h1> \
                <p>Number of outgoing groups of specified size(s): " + number + "</p> \
            </div>");
     
+    // Set the info window font family to that of the page body.
+    var bodyFontFamily = $("body").css("font-family");
+    infoWindowDiv.css("font-family", bodyFontFamily);
+    
     if (svData != null) {
         // If Street View data is available, set up an element to hold it.
         var panoramaDiv = $("<div class='panorama'></div>");
-        infoWindowDiv.children("h1").append(panoramaDiv);
+        infoWindowDiv.children("h1").after(panoramaDiv);
         
         var panorama = new google.maps.StreetViewPanorama(panoramaDiv[0], {
             pano: svData.location.pano,
